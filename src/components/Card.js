@@ -26,33 +26,11 @@ console.log(data)
         {
           data.map((item, ind)=>(
             <Grid item md={4} sm={12}>
-            <Card className={classes.root}>
-            <div>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={item.image}
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    {item.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  View
-                </Button>
-                <Button size="small" color="primary">
-                  Add to cart
-                </Button>
-              </CardActions>
-            </div>
-            </Card>
+               <div key={item.id}>
+                <div className='title'>{item.category}</div>
+                <div><img width='100px' height='100px' src={item.image}></img></div>
+                <button className='buyBtn'>Buy Now</button>
+              </div>
           </Grid>
           ))
         }
