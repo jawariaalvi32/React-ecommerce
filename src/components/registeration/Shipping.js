@@ -41,7 +41,6 @@ const useStyles = makeStyles(theme => ({
 function Shipping({ formData, setFormData, nextStep }) {
     const classes = useStyles();
     return (
-      <Grid container>
         <Formik
         initialValues={formData}
         onSubmit={values => {
@@ -53,7 +52,6 @@ function Shipping({ formData, setFormData, nextStep }) {
       {({ errors, touched }) => (
           <Form className={classes.form}>
 
-        <Grid item md={6}>
         <Field
               name='firstName'
               label='First Name'
@@ -62,8 +60,6 @@ function Shipping({ formData, setFormData, nextStep }) {
               error={touched.firstName && errors.firstName}
               helperText={touched.firstName && errors.firstName}
             />
-        </Grid>
-        <Grid item md={6}>
         <Field
               name='lastName'
               label='Last Name'
@@ -72,8 +68,6 @@ function Shipping({ formData, setFormData, nextStep }) {
               error={touched.lastName && errors.lastName}
               helperText={touched.lastName && errors.lastName}
             />
-        </Grid>
-        <Grid item md={12}>
         <Field
               type='text'
               name='address'
@@ -83,8 +77,6 @@ function Shipping({ formData, setFormData, nextStep }) {
               error={touched.address && errors.address}
               helperText={touched.address && errors.address}
             />
-        </Grid>
-        <Grid item md={6}>
         <Field
               type='text'
               name='city'
@@ -94,8 +86,6 @@ function Shipping({ formData, setFormData, nextStep }) {
               error={touched.city && errors.city}
               helperText={touched.city && errors.city}
             />
-        </Grid>
-        <Grid item md={6}>
         <Field
               type='text'
               name='country'
@@ -105,7 +95,6 @@ function Shipping({ formData, setFormData, nextStep }) {
               error={touched.country && errors.country}
               helperText={touched.country && errors.country}
             />
-        </Grid>
       {/* <Formik
         initialValues={formData}
         onSubmit={values => {
@@ -170,7 +159,6 @@ function Shipping({ formData, setFormData, nextStep }) {
           </Form>
         )}
       </Formik>
-    </Grid>
     )
 }
 
