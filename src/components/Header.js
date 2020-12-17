@@ -29,7 +29,7 @@ function Header() {
             <Link to="/" className="link">STORE</Link>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/products">Products</Link>
+            <Link to="/product">Products</Link>
             <Link to="/cart">Cart</Link>
           </Typography>
           <Link to="/register">Register</Link>        
