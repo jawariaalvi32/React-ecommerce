@@ -95,59 +95,6 @@ function Shipping({ formData, setFormData, nextStep }) {
               error={touched.country && errors.country}
               helperText={touched.country && errors.country}
             />
-      {/* <Formik
-        initialValues={formData}
-        onSubmit={values => {
-          setFormData(values);
-          nextStep();
-        }}
-        validationSchema={validationSchema}
-      > */}
-        {/* {({ errors, touched }) => (
-          <Form className={classes.form}>
-            <Field
-              name='firstName'
-              label='First Name'
-              margin='normal'
-              as={TextField}
-              error={touched.firstName && errors.firstName}
-              helperText={touched.firstName && errors.firstName}
-            />
-            <Field
-              name='lastName'
-              label='Last Name'
-              margin='normal'
-              as={TextField}
-              error={touched.lastName && errors.lastName}
-              helperText={touched.lastName && errors.lastName}
-            /> */}
-            {/* <Field
-              type='text'
-              name='address'
-              label='Address'
-              margin='normal'
-              as={TextField}
-              error={touched.address && errors.address}
-              helperText={touched.address && errors.address}
-            /> */}
-            {/* <Field
-              type='text'
-              name='city'
-              label='City'
-              margin='normal'
-              as={TextField}
-              error={touched.city && errors.city}
-              helperText={touched.city && errors.city}
-            />
-            <Field
-              type='text'
-              name='country'
-              label='Country'
-              margin='normal'
-              as={TextField}
-              error={touched.country && errors.country}
-              helperText={touched.country && errors.country}
-            /> */}
             <Button
               type='submit'
               variant='contained'
