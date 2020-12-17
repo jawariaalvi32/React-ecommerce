@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
-import { Signup } from '../../store/action';
+import { Login } from '../../store/action';
 
 const validationSchema = yup.object({
   email: yup
@@ -17,7 +17,7 @@ const validationSchema = yup.object({
     .required('Password is required'),
 });
   
-function LoginForm(props) {
+function Form(props) {
   const [Data, setData] = useState([])
   const formik = useFormik({
     initialValues: {
@@ -26,9 +26,9 @@ function LoginForm(props) {
     },
     validationSchema: validationSchema,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-      setData(values)
-      props.Signup(values)
+    //   alert(JSON.stringify(values, null, 2));
+    //   setData(values)
+      props.Login(values)
     },
   });
   console.log(Data)
@@ -38,7 +38,7 @@ function LoginForm(props) {
         <Grid container spacing={0}>
           <Grid item md={4} sm={0}/>
         <Grid item md={4} xs={12} >
-            <h2 className="p1"style={{textAlign:"center"}}>SIGNUP</h2><br/>
+            <h2 className="p1"style={{textAlign:"center"}}>LOGIN</h2><br/>
             <form  className="form" onSubmit={formik.handleSubmit}> 
               <TextField
                   fullWidth
@@ -74,8 +74,8 @@ function LoginForm(props) {
  }
 
  const mapDispatchToProps = (dispatch) => ({
-  Signup: (Data) => dispatch(Signup(Data))
+  Login: (Data) => dispatch(Login(Data))
 })
 
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default connect(null, mapDispatchToProps)(Form);

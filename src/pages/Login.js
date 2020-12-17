@@ -1,11 +1,24 @@
 import React from 'react'
 import LoginForm from '../components/login/LoginForm'
-function Login() {
+import { connect } from 'react-redux';
+import Form from '../components/login/Form';
+
+function Login(props) {
     return (
         <div>
-            <LoginForm/>
+            {console.log(props.isSigned)}
+            {
+                (props.isSigned) ? 
+                <Form/>:
+                <LoginForm/>
+            }
         </div>
     )
 }
 
-export default Login
+function mapStateToProps(state) {
+    const { isSigned } = state
+    return { isSigned: isSigned }
+  }
+  
+  export default connect(mapStateToProps)(Login)
