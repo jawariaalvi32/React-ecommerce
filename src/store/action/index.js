@@ -23,10 +23,13 @@ const Login = (data) => {
     console.log("DAta", data)
     firebase.auth().signInWithEmailAndPassword(data.email, data.password)
     .then((user) => {
+        console.log("LOGIN")
+
         let createUser = {
             email: user.email,
             uid:user.uid
         }
+        console.log("LOGIN")
         return dispatch => {  
             dispatch({
                 type:"SETUSER",

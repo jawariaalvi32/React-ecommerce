@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import '../App.css';
+import LoginSignup from './login/Login';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,7 +34,7 @@ function Header() {
             <Link to="/cart">Cart</Link>
           </Typography>
           <Link to="/register">Register</Link>        
-          <Link to="/login">Login</Link>        
+          <Link to="/login"><LoginSignup/></Link>        
         </Toolbar>
       </AppBar>
     </div>
