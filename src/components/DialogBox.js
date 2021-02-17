@@ -6,15 +6,13 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { Login } from '../store/action';
+import { Login, Signup } from '../store/action';
 
 export default function DialogBox({method}) {
   const [open, setOpen] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [pwd, setPwd] = React.useState('');
 
-  const [data, setData] = React.useState({});
-// console.log(method)
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -23,24 +21,22 @@ export default function DialogBox({method}) {
     setOpen(false);
   };
 
-  const handleChange = (e) => {
-    e.preventDefault()
-    console.log(e.target.value)
-    setEmail(e.target.value)
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('e.target.value')
-    let dates = {
+    let data = {
         email: email,
         password: pwd
     }
-    setData(dates)
-    console.log(data)
-    method(data)
-    console.log('e.tarddget.value')
+    Login(data)
+  }
 
+  const handleSignup = (e) => {
+    e.preventDefault()
+    let data = {
+        email: email,
+        password: pwd
+    }
+    Signup(data)
   }
 
   return (
@@ -62,7 +58,8 @@ export default function DialogBox({method}) {
             label="Email Address"
             type="email"
             fullWidth
-            onChange={handleChange}
+            onChange={ (e) => setEmail(e.target.value)
+            }
           />
           <TextField
             autoFocus
@@ -71,14 +68,14 @@ export default function DialogBox({method}) {
             label="Password"
             type="password"
             fullWidth
-            onChange={handleChange}
-          />
+            onChange={ (e) => setPwd(e.target.value) }
+            />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleSubmit} color="primary">
             Login
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleSignup} color="primary">
             Signup
           </Button>
         </DialogActions>
