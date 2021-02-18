@@ -7,12 +7,14 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Login, Signup } from '../store/action';
+import {useSelector, useDispatch} from 'react-redux'
 
 export default function DialogBox({method}) {
   const [open, setOpen] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [pwd, setPwd] = React.useState('');
-
+  const user = useSelector(state => state.user)
+  console.log(user)
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -41,9 +43,9 @@ export default function DialogBox({method}) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <a variant="outlined" color="primary" onClick={handleClickOpen}>
         Login
-      </Button>
+      </a>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Login</DialogTitle>
         <DialogContent>

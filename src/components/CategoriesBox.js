@@ -9,18 +9,32 @@ const useStyles = makeStyles({
     },
     container: {
         justifyContent: 'center',
+        marginTop:'3%'
     },
     styleborder: {
         border: '1px solid gray'
 
+    },
+    styleheading: {
+        textAlign: 'center',
+        marginTop:'2%'
+    },
+    styleimg: {
+        boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+        "&:hover": {
+            boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
+        }
     }
+
   });
 
-export const Box = ({ categories }) => {
+export const CategoriesBox = ({ categories }) => {
     const classes = useStyles();
-console.log(categories)
+
     return (
-        <Grid container className={classes.container}>
+        <div>
+            <h3 className={classes.styleheading}>SHOP BY CATEGORY</h3>
+            <Grid container className={classes.container}>
             {
                 categories.map(
                     (item) => {
@@ -31,7 +45,7 @@ console.log(categories)
                                     <p>{item.text}</p>
                                 </div>
                                 <a href="/product">
-                                    <img src={item.image} width="100%" height="550px"/>
+                                    <img className={classes.styleimg} src={item.image} width="100%" height="550px"/>
                                 </a>
                             </Grid>
                         )
@@ -39,5 +53,7 @@ console.log(categories)
                 )
             }
         </Grid>
+
+        </div>
     )
 }

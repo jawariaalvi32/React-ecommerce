@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { CategoriesApi } from './Api'
+import { ProductsByCat } from './Api'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,10 +23,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Categories() {
+export default function Navbar() {
   const classes = useStyles();
   const categories = CategoriesApi();
-  console.log(categories)
+  const CategorizedProducts = ProductsByCat();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    let category = e.target.innerText
+    // ProductsByCat(category)
+    window.location.href = '/products/category'
+  }
+// console.log(CategorizedProducts)
   return (
     <div className={classes.root}>
         {
@@ -33,7 +42,7 @@ export default function Categories() {
                 (item) => {
                     return(
                     <Typography className={classes.title}>
-                        {item.toUpperCase()}
+                        <button onClick={handleClick}> {item.toUpperCase()} </button>
                     </Typography>
                     )
                 }

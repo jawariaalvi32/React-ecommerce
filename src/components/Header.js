@@ -30,11 +30,9 @@ function Header() {
             <Link to="/" className="link">STORE</Link>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/product">Products</Link>
-            <Link to="/cart">Cart</Link>
+            <Link to="/products/category">Products</Link>
           </Typography>
-          <Link to="/register">Register</Link>        
-          <Link to="/login"><LoginSignup/></Link>        
+          <Link to="#"><LoginSignup/></Link>        
         </Toolbar>
       </AppBar>
     </div>

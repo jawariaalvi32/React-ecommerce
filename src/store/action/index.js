@@ -20,6 +20,8 @@ const Signup = (data) => {
 }
 
 const Login = (data) => {
+    return dispatch => {  
+
     console.log("DAta", data)
     firebase.auth().signInWithEmailAndPassword(data.email, data.password)
     .then((user) => {
@@ -29,13 +31,11 @@ const Login = (data) => {
             email: user.email,
             uid:user.uid
         }
-        console.log("LOGIN")
-        return dispatch => {  
             dispatch({
                 type:"SETUSER",
                 payload: createUser
             })
-        }   
+          
     })
     .catch((error) => {
         console.log(error)
@@ -43,8 +43,9 @@ const Login = (data) => {
         var errorMessage = error.message;
     });
 }
+}
 
 export {
     Signup,
-    Login
+    Login,
 }

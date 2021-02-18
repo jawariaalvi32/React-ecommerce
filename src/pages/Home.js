@@ -1,15 +1,13 @@
 import React from 'react'
-<<<<<<< HEAD
-import Categories from '../components/Categories'
-=======
-import { Box } from '../components/Box'
->>>>>>> 6f407d6f13b7fe0fe605384f6aff9432deb4e9bf
-import DialogBox from '../components/DialogBox'
+import Navbar from '../components/Navbar'
+import { CategoriesBox } from '../components/CategoriesBox'
 import Hero from '../components/Hero'
 import HeroImg from '../images/Online shopping-pana.png'
 import men from '../images/men.jpeg'
 import women from '../images/women.jpeg'
 import jewel from '../images/jewel.jpeg'
+import FeaturedProducts  from '../components/FeaturedProducts'
+import Footer from '../components/Footer/Footer'
 
 function Home() {
     const categories = [
@@ -31,14 +29,11 @@ function Home() {
     ]
     return (
         <div>
-                        <Categories/>
-
+            <Navbar/>
             <Hero hero={HeroImg}/>
-<<<<<<< HEAD
-=======
-            <DialogBox/>
-            <Box categories={categories}/>
->>>>>>> 6f407d6f13b7fe0fe605384f6aff9432deb4e9bf
+            <CategoriesBox categories={categories}/>
+            <FeaturedProducts/>
+            <Footer/>
         </div>
     )
 }

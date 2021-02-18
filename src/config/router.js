@@ -6,7 +6,6 @@ import {
     Link
   } from "react-router-dom";
 import Header from '../components/Header';
-import Cart from '../pages/Cart';
 import Home from '../pages/Home';
 import Product from '../pages/Product';
 
@@ -15,10 +14,7 @@ function Navbar() {
         <Router>
             <Header/>
             <Switch>
-                <Route path="/cart">
-                    <Cart />
-                </Route>
-                <Route path="/product">
+                <Route path="/products/category">
                     <Product />
                 </Route>
                 <Route exact path="/">
