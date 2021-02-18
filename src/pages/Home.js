@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { CategoriesBox } from '../components/CategoriesBox'
+import CategoriesBox from '../components/CategoriesBox'
 import Hero from '../components/Hero'
 import HeroImg from '../images/Online shopping-pana.png'
 import men from '../images/men.jpeg'
