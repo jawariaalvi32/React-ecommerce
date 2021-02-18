@@ -2,6 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonShop from './Button';
+import banner from '../images/banner.jpg'
 
 const useStyles = makeStyles((theme) => ({
     imgStyles : {
@@ -27,14 +28,7 @@ function Hero({hero}) {
 
     return (
         <Grid container>
-            <Grid item xs={4} className={classes.headingStyles}>
-            <h1>STORE</h1>
-            <p className={classes.paraStyles}>Fake store rest API for your e-commerce or shopping website prototype</p>
-            <ButtonShop text="Shop"/>
-            </Grid>
-            <Grid item alignContent={"right"} className={classes.imgStyles} xs={7}>
-                <img src={hero} width="70%"/>
-            </Grid>
+            <img src={banner} width="100%"/>
         </Grid>
     )
 }
