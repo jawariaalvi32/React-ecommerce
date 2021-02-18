@@ -1,5 +1,5 @@
 import React from 'react'
-import Categories from '../components/registeration/Categories'
+import Categories from '../components/Categories'
 
 export default function Cart() {
     return (

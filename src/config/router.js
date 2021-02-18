@@ -8,9 +8,7 @@ import {
 import Header from '../components/Header';
 import Cart from '../pages/Cart';
 import Home from '../pages/Home';
-import Login from '../pages/Login';
 import Product from '../pages/Product';
-import Register from '../pages/Register';
 
 function Navbar() {
     return (
@@ -22,12 +20,6 @@ function Navbar() {
                 </Route>
                 <Route path="/product">
                     <Product />
-                </Route>
-                <Route path="/login">
-                    <Login />
-                </Route>
-                <Route path="/register">
-                    <Register />
                 </Route>
                 <Route exact path="/">
                     <Home />

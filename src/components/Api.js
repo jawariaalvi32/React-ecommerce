@@ -21,16 +21,11 @@ function Api() {
 function CategoriesApi() {
     const [data, setdata] = React.useState([])
     React.useEffect(() => {
-        fetch('https://fakestoreapi.com/products/category')
+        fetch('https://fakestoreapi.com/products/categories')
             .then(res=>res.json())
-            .then(json=>console.log(json))
+            .then(json=> setdata(json))
     },[data])
-    // console.log(data)
-    return (
-        <div>
-            <Card data={data}/>
-        </div>
-    )
+    return data
 }
 
 export{
