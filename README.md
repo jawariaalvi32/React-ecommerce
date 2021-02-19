@@ -1,7 +1,5 @@
 # React Ecommerce
 
-This tracker aims to show the numbers of people affected, recovered and deceased due to COVID-19.
-
 ## Built With
 
 * [React](https://reactjs.org/)
