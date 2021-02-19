@@ -1,9 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { CategoriesApi, Api } from './Api'
-import { ProductsByCat } from './Api'
-import Button from '@material-ui/core/Button';
+import { CategoriesApi } from './Api'
 import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
@@ -29,14 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar() {
   const classes = useStyles();
   const categories = CategoriesApi();
-  const CategorizedProducts = ProductsByCat();
-//   const product = Api();
-// console.log(Api())
-  const handleClick = (e) => {
-    e.preventDefault();
-    let category = e.target.innerText.toLowerCase()
-    // window.location.href = `/products/category/${category}`
-  }
+
   return (
     <div className={classes.root}>
         {
@@ -44,7 +35,7 @@ export default function Navbar() {
                 (item) => {
                     return(
                     <Typography className={classes.title}>
-                        <Link to="/products/category/jewelery" className={classes.stylebtn}> {item.toUpperCase()} </Link>
+                        <a href={`/products/category/${item}`} className={classes.stylebtn}> {item.toUpperCase()} </a>
                     </Typography>
                     )
                 }
