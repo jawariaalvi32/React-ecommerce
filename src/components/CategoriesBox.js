@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core'
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import {Link} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles({
     styleGrid: {
