@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
 import '../App.css';
 import LoginSignup from './login/Login';
-
+import { useSelector, useDispatch } from 'react-redux'
+import { SignedOut } from '../store/action'
+import Grid from '@material-ui/core/Grid';
+import {GiShoppingBag} from 'react-icons/gi'
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -18,64 +17,50 @@ const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,
     },
+	container: {
+		display: 'flex',
+		backgroundColor: 'black'
+	},
+	link: {
+		padding:'5%',
+	},
+	logo:{
+		margin:'3%',
+	}
     
   }));
 function Header() {
     const classes = useStyles();
+	const state = useSelector(state => state.user)
+	const dispatch = useDispatch()
+	console.log(state)
+	const handleLogout = (e) => {
+		e.preventDefault()
+		dispatch(SignedOut())
+	}
     return (
-    //     <div className={classes.root}>
-    //   <AppBar position="static">
-    //     <Toolbar>
-    //       <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-    //         <Link to="/" className="link">STORE</Link>
-    //       </IconButton>
-    //       <Typography variant="h6" className={classes.title}>
-    //         <Link to="/products/category">Products</Link>
-    //       </Typography>
-    //       <Link to="#"><LoginSignup/></Link>        
-    //     </Toolbar>
-    //   </AppBar>
-    // </div>
-    <div className="container nav-box">
-			<div className="row justify-content-between align-items-center">
-				<div className="logo col-md-3">
-					<Link to="/">
-            LOGO
-						{/* <img src={logo} alt="logo" className="img-fluid logo" /> */}
-					</Link>
-				</div>
-				<div className="items col-md-5 ">
-					<ul className="nav justify-content-end">
-						<li className="shopping-cart">
-							<Link to="/cart">
-								{/* <FaShoppingCart className="cart" />{' '}
-								<span>
-									<strong>{cartQuantity.length}</strong>
-								</span> */}
-							</Link>
-						</li>
-						{/* <li>
-							{loginInfo.displayName ? (
-								<Link to="/user-info" className="user">
-									{loginInfo.displayName}
-								</Link>
-							) : (
-								<Link to="/login">Login</Link>
-							)}
-						</li>
-						<li>
-							{loginInfo.email ? (
-								<Link to="/" onClick={signedOut}>
-									Logout
-								</Link>
-							) : (
-								<Link to="/signup">Sign up</Link>
-							)}
-						</li> */}
-					</ul>
-				</div>
-			</div>
-		</div>
+    <Grid container className={classes.container}>
+			<Grid item md={3}>
+				<Link to="/">
+					<GiShoppingBag size={45} color="#2F4F4F"/>
+					<span className={classes.logo}> STORE</span>
+				</Link>
+			</Grid>
+			<Grid item md={4} style={{marginTop:"2%"}}>
+				<Link to="/products/category">
+					<span>PRODUCTS</span>
+				</Link>
+			</Grid>
+			<Grid item md={5}>
+					{state.email ? (
+						<Link to="#" onClick={handleLogout} className={classes.link}>
+							Logout
+						</Link>
+					) : (
+						<Link to="#" className={classes.link}><LoginSignup/></Link> 			
+					)}
+			</Grid>
+		</Grid>
     )
 }
 

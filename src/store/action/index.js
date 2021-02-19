@@ -1,22 +1,21 @@
 import firebase from '../../config/firebase';
 
 const Signup = (data) => {
+    return dispatch => {  
+
     console.log("DAta", data)
     firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
-    .then((user) => {
-        console.log(user)
-        return dispatch => {  
+    .then(function(user) {
+        alert("SIGNEDUP")
             dispatch({
                 type:"SIGNEDUP",
                 payload: true
             })
-        }        
     })
     .catch((error) => {
         console.log(error)
-        var errorCode = error.code;
-        var errorMessage = error.message;
     });
+}
 }
 
 const Login = (data) => {
@@ -24,12 +23,12 @@ const Login = (data) => {
 
     console.log("DAta", data)
     firebase.auth().signInWithEmailAndPassword(data.email, data.password)
-    .then((user) => {
-        console.log("LOGIN")
+    .then(function(user) {
+        alert('LOGIN')
 
         let createUser = {
-            email: user.email,
-            uid:user.uid
+            email: user.user.email,
+            uid:user.user.uid
         }
             dispatch({
                 type:"SETUSER",
@@ -39,13 +38,28 @@ const Login = (data) => {
     })
     .catch((error) => {
         console.log(error)
-        var errorCode = error.code;
-        var errorMessage = error.message;
     });
+}
+}
+
+const SignedOut = (data) => {
+    return dispatch => {  
+
+    console.log("DAta", data)
+    firebase.auth().signOut().then(() => {
+        alert("Logout")
+
+            dispatch({
+                type:"SIGNEDOUT",
+            })
+      }).catch((error) => {
+        console.log(error)
+      });
 }
 }
 
 export {
     Signup,
     Login,
+    SignedOut,
 }

@@ -55,7 +55,7 @@ export default function ProductCard({data}) {
                 </CardActionArea>
                 <CardActions>
                   <Button size="small" color="primary" className={classes.stylebtn}>
-                    <FaCartPlus size="32"/>
+                    <FaCartPlus size="32" color="#2F4F4F"/>
                   </Button>
                 </CardActions>
               </Card>

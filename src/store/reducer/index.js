@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    user:[ ],
+    user: {},
     isSigned: false
 }
 
@@ -16,6 +16,11 @@ export default (state = INITIAL_STATE, action) => {
         case "SIGNEDUP" :
             return ({
                 isSigned: action.payload
+            })
+        case "SIGNEDOUT" :
+            return ({
+                ...state,
+                user: []
             })
         default:
             return state;

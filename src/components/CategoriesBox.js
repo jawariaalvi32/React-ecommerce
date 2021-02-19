@@ -12,12 +12,11 @@ const useStyles = makeStyles({
         marginTop:'3%'
     },
     styleborder: {
-        border: '1px solid gray'
-
+        border: '1px solid gray',
     },
     styleheading: {
         textAlign: 'center',
-        marginTop:'2%'
+        marginTop:'2%',
     },
     styleimg: {
         boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",

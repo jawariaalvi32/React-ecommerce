@@ -14,6 +14,7 @@ export default function DialogBox({method}) {
   const [email, setEmail] = React.useState('');
   const [pwd, setPwd] = React.useState('');
   const user = useSelector(state => state.user)
+  const dispatch = useDispatch()
   console.log(user)
   const handleClickOpen = () => {
     setOpen(true);
@@ -29,7 +30,7 @@ export default function DialogBox({method}) {
         email: email,
         password: pwd
     }
-    Login(data)
+    dispatch(Login(data))
   }
 
   const handleSignup = (e) => {
@@ -38,7 +39,7 @@ export default function DialogBox({method}) {
         email: email,
         password: pwd
     }
-    Signup(data)
+    dispatch(Signup(data))
   }
 
   return (
