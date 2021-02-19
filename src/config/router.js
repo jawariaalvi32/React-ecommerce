@@ -6,6 +6,7 @@ import {
     Link
   } from "react-router-dom";
 import Header from '../components/Header';
+import LoginSignup from '../components/login/Login';
 import Home from '../pages/Home';
 import Product from '../pages/Product';
 
@@ -28,6 +29,9 @@ function Navbar() {
                 </Route>
                 <Route path="/products/categorywo/men%20clothing">
                     <Product />
+                </Route>
+                <Route path="/login">
+                    <LoginSignup/>
                 </Route>
                 <Route exact path="/">
                     <Home />

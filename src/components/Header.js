@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: 'black'
 	},
 	link: {
-		padding:'5%',
+		margin:'5%',
 	},
 	logo:{
 		marginTop:'1%',
@@ -52,13 +52,13 @@ function Header() {
 				</Link>
 			</Grid>
 			<Grid item md={5}>
-					{state.email ? (
-						<Link to="#" onClick={handleLogout} className={classes.link}>
-							Logout
-						</Link>
-					) : (
-						<Link to="#" className={classes.link}><LoginSignup/></Link> 			
-					)}
+				{state.email ? (
+					<Link to="#" onClick={handleLogout} className={classes.link}>
+						Logout
+					</Link>
+				) : (
+					<Link to="#" className={classes.link}><LoginSignup/></Link> 			
+				)}
 			</Grid>
 		</Grid>
     )

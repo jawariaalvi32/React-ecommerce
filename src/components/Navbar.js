@@ -43,7 +43,7 @@ export default function Navbar() {
                 (item) => {
                     return(
                     <Typography className={classes.title}>
-                        <Link to="#" onClick={handleClick} className={classes.stylebtn}> {item.toUpperCase()} </Link>
+                        <Link to={`/products/category/`} onClick={handleClick} className={classes.stylebtn}> {item.toUpperCase()} </Link>
                     </Typography>
                     )
                 }
