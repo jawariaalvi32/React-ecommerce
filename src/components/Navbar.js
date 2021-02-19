@@ -35,7 +35,7 @@ export default function Navbar() {
                 (item) => {
                     return(
                     <Typography className={classes.title}>
-                        <a href={`/products/category/${item}`} className={classes.stylebtn}> {item.toUpperCase()} </a>
+                        <Link to={`/products/category/${item}`} className={classes.stylebtn}> {item.toUpperCase()} </Link>
                     </Typography>
                     )
                 }
