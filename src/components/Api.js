@@ -5,8 +5,8 @@ function Api() {
     console.log(window.location.pathname)
 
     let path = (window.location.pathname == '/products/category') ? 
-    'http://localhost:3000/products' :
-    `http://localhost:3000/products/category/${window.location.pathname}`
+    'https://fakestoreapi.com/products' :
+    `https://fakestoreapi.com${window.location.pathname}`
     React.useEffect(() => {
         fetch(path)
             .then(res=>res.json())
