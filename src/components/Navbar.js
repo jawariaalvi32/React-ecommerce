@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import { CategoriesApi } from './Api'
 import { ProductsByCat } from './Api'
 import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,7 +19,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   stylebtn: {
-
+    color: 'black !important',
+    "&:hover": {
+      color: 'black !important'  
+    },
   }
 }));
 
@@ -39,7 +43,7 @@ export default function Navbar() {
                 (item) => {
                     return(
                     <Typography className={classes.title}>
-                        <Button onClick={handleClick} className={classes.stylebtn}> {item.toUpperCase()} </Button>
+                        <Link to="#" onClick={handleClick} className={classes.stylebtn}> {item.toUpperCase()} </Link>
                     </Typography>
                     )
                 }
