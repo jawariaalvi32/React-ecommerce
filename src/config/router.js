@@ -17,6 +17,18 @@ function Navbar() {
                 <Route path="/products/category">
                     <Product />
                 </Route>
+                <Route path="/products/category/jewelry">
+                    <Product />
+                </Route>
+                <Route path="/products/category/electronics">
+                    <Product />
+                </Route>
+                <Route path="/products/category/men%20clothing">
+                    <Product />
+                </Route>
+                <Route path="/products/categorywo/men%20clothing">
+                    <Product />
+                </Route>
                 <Route exact path="/">
                     <Home />
                 </Route>
