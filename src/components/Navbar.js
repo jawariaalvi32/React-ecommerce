@@ -28,6 +28,10 @@ export default function Navbar() {
   const classes = useStyles();
   const categories = CategoriesApi();
 
+  const handleClick = (item) => {
+    window.location = `http://localhost:3000/products/category/${item}`
+  }
+
   return (
     <div className={classes.root}>
         {
@@ -35,7 +39,7 @@ export default function Navbar() {
                 (item) => {
                     return(
                     <Typography className={classes.title}>
-                        <Link to={`/products/category/${item}`} className={classes.stylebtn}> {item.toUpperCase()} </Link>
+                        <Link to="#" onClick={() => handleClick(item)} className={classes.stylebtn}> {item.toUpperCase()} </Link>
                     </Typography>
                     )
                 }

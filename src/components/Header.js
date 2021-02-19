@@ -47,7 +47,7 @@ function Header() {
 				</Link>
 			</Grid>
 			<Grid item md={4} style={{marginTop:"1.5%"}}>
-				<Link to="/products/category">
+				<Link to="#" onClick={ ()  => window.location = `http://localhost:3000/products/category` }>
 					<span>PRODUCTS</span>
 				</Link>
 			</Grid>
