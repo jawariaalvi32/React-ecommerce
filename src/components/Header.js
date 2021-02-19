@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 		padding:'5%',
 	},
 	logo:{
-		margin:'3%',
+		marginTop:'1%',
 	}
     
   }));
@@ -46,7 +46,7 @@ function Header() {
 					<span className={classes.logo}> STORE</span>
 				</Link>
 			</Grid>
-			<Grid item md={4} style={{marginTop:"2%"}}>
+			<Grid item md={4} style={{marginTop:"1.5%"}}>
 				<Link to="/products/category">
 					<span>PRODUCTS</span>
 				</Link>

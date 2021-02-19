@@ -43,7 +43,7 @@ const CategoriesBox = ({ categories }) => {
                                     <h6>{item.title}</h6>
                                     <p>{item.text}</p>
                                 </div>
-                                <a href="/product">
+                                <a href="/products/category">
                                     <img className={classes.styleimg} src={item.image} width="100%" height="550px"/>
                                 </a>
                             </Grid>
