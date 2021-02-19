@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core'
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-
+import {Link} from 'react-redux'
 
 const useStyles = makeStyles({
     styleGrid: {
@@ -43,9 +43,9 @@ const CategoriesBox = ({ categories }) => {
                                     <h6>{item.title}</h6>
                                     <p>{item.text}</p>
                                 </div>
-                                <a href="/products/category">
+                                <Link to="/products/category">
                                     <img className={classes.styleimg} src={item.image} width="100%" height="550px"/>
-                                </a>
+                                </Link>
                             </Grid>
                         )
                     }
