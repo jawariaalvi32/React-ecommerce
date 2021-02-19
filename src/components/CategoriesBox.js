@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 
   });
 
-export const CategoriesBox = ({ categories }) => {
+const CategoriesBox = ({ categories }) => {
     const classes = useStyles();
 
     return (
@@ -57,3 +57,4 @@ export const CategoriesBox = ({ categories }) => {
         </div>
     )
 }
+export default CategoriesBox

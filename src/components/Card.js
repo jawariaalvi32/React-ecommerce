@@ -25,7 +25,13 @@ const useStyles = makeStyles({
     margin: 'auto'
   },
   container: {
-    width : "95%"
+    width : "95%",
+    margin: 'auto',
+    justifyContent: 'center'
+  },
+  item: {
+    margin: 'auto',
+    justifyContent: 'center'
   }
 });
 
@@ -36,7 +42,7 @@ export default function ProductCard({data}) {
     <Grid container className={classes.container}>
         {
           data.map((item, ind)=>(
-            <Grid item md={4} sm={12}>
+            <Grid item md={4} sm={6} xs={12} className={classes.item}>
               <Zoom>
               <Card className={classes.root}>
                 <CardActionArea>

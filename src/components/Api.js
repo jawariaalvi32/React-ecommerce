@@ -2,11 +2,11 @@ import React from 'react'
 import Card from './Card'
 function Api() {
     const [data, setdata] = React.useState([])
-    console.log(window.location.pathname)
 
     let path = (window.location.pathname == '/products/category') ? 
     'https://fakestoreapi.com/products' :
     `https://fakestoreapi.com${window.location.pathname}`
+
     React.useEffect(() => {
         fetch(path)
             .then(res=>res.json())
@@ -14,7 +14,7 @@ function Api() {
                 console.log(json)
                 setdata(json)
             })
-    },[data])
+    },[])
     return (
         <div>
             <Card data={data}/>

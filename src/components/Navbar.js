@@ -1,13 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import { CategoriesApi } from './Api'
 import { ProductsByCat } from './Api'
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  stylebtn: {
+
+  }
 }));
 
 export default function Navbar() {
@@ -30,11 +29,9 @@ export default function Navbar() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    let category = e.target.innerText
-    // ProductsByCat(category)
-    window.location.href = '/products/category'
+    let category = e.target.innerText.toLowerCase()
+    window.location.href = `/products/category/${category}`
   }
-// console.log(CategorizedProducts)
   return (
     <div className={classes.root}>
         {
@@ -42,7 +39,7 @@ export default function Navbar() {
                 (item) => {
                     return(
                     <Typography className={classes.title}>
-                        <button onClick={handleClick}> {item.toUpperCase()} </button>
+                        <Button onClick={handleClick} className={classes.stylebtn}> {item.toUpperCase()} </Button>
                     </Typography>
                     )
                 }
